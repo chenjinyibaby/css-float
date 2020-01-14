@@ -1,0 +1,95 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+ul,
+ol {
+  list-style: none;
+}
+.clearfix::after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+ul > li {
+  /* border: 1px solid red; */
+  float: left;
+  padding: 4px 0.5em;
+  line-height: 24px; /*文字的高度，为了更好的与图片对齐*/
+}
+ul {
+  /* border: 1px solid blue; */
+  display: inline-block; /*inline-block；是能多小就多小，避免宽度过宽 */
+}
+.nav {
+  float: right;
+  margin-top: 4px; /*根据图片和文字的高度确定*/
+}
+img {
+  /* border: 1px solid red; */
+  max-width: 100%;
+  height: 42px;
+  vertical-align: top; /* 去除图片背景色下面多余的部分 */
+}
+.logo {
+  background: grey;
+  display: inline-block;
+  float: left;
+}
+header {
+  /* border: 1px solid pink; */
+  background: rgba(245, 245, 245);
+}
+
+.content > aside {
+  /* border: 1px solid red; */
+  width: 200px;
+  height: 400px;
+  /*一般情况下不要写高度，高度是由内容撑起来的*/
+  float: left;
+  background: rgb(163, 161, 161);
+}
+.content > main {
+  /* border: 1px solid green; */
+  width: 500px;
+  height: 400px;
+  float: left;
+  background: grey;
+}
+.content > .ad {
+  /* border: 1px solid green; */
+  width: 100px;
+  height: 400px;
+  float: left;
+  background: rgb(48, 47, 47);
+}
+.content {
+  outline: 1px solid blueviolet; /*因为border有边框，2px，所以这个时候可以使用outline，来使边框不在这个宽度范围之内*/
+  width: 800px;
+  /* margin: 0 auto; 当你是块级元素并且固定宽度的，则margin，上下0像素，左右自动，就会居中 */
+  margin-left: auto;
+  margin-right: auto;
+}
+.imageList {
+  outline: 1px solid red;
+  width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+.imageList > .x > .image {
+  border: 1px solid springgreen;
+  width: 191px; /*平均布局，宽度要自己计算。4x+3y=800*/
+  height: 191px;
+  background: black;
+  margin-bottom: 10px;
+  float: left; /*此时之间没有空隙*/
+  margin-right: 12px; /*第四个掉到了第二排因为固定宽度了，并且第四个image也有一个外边距12像素，所以此时用-margin*/
+}
+.imageList > .x {
+  margin-right: -12px;
+  /* outline: 1px solid red; */
+}
